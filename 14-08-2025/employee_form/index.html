@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Employee Form</h1>
+    <p class="sub">All fields are required. <strong>You cannot leave any field blank.</strong></p>
+
+    <form id="employeeForm" novalidate>
+      <!-- Employee ID -->
+      <div class="field">
+        <label for="empId">Employee ID</label>
+        <input id="empId" name="empId" type="text"
+               required inputmode="numeric" pattern="\d+"
+               placeholder="e.g., 101" />
+
+      </div>
+
+      <!-- Employee Name -->
+      <div class="field">
+        <label for="empName">Employee Name</label>
+        <input id="empName" name="empName" type="text"
+               required pattern="[A-Za-z ]+"
+               placeholder="e.g., Uma Mageshwari" />
+    
+      </div>
+
+      <!-- Email -->
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email"
+               required placeholder="name@example.com" />
+      </div>
+
+      <!-- DOB -->
+      <div class="field">
+        <label for="dob">Date of Birth</label>
+        <input id="dob" name="dob" type="date" required />
+      </div>
+
+      <!-- Address (alphanumeric + a few symbols) -->
+      <div class="field">
+        <label for="address">Address</label>
+        <input id="address" name="address" type="text"
+               required pattern="[A-Za-z0-9 ,.\-/#]+"
+               placeholder="House No, Street, Area, City" />
+      </div>
+
+      <!-- Mobile -->
+      <div class="field">
+        <label for="mobile">Mobile No</label>
+        <input id="mobile" name="mobile" type="tel"
+               required inputmode="numeric" pattern="\d{10}"
+               placeholder="10-digit mobile number" />
+        <small class="help">Exactly ten digits</small>
+      </div>
+
+      <div class="actions">
+        <input type="submit">Submit</input>
+        
+        
+      </div>
+    </form>
+
+    <pre class="output" id="result" aria-live="polite"></pre>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
